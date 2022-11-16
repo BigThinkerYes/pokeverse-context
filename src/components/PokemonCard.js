@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
-import { Button } from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 import { FavoritesContext } from "../FavoritesProvider";
 
 function PokemonCard({ name }) {
@@ -42,13 +42,13 @@ function PokemonCard({ name }) {
             ))}
           </ul>
         </Card.Text>
-        <button
+        <Button
           variant="primary"
           className="btn btn-primary"
           onClick={() => addFavorite(name)}
         >
           Add to Favorites
-        </button>
+        </Button>
       </Card.Body>
     </Card>
   );

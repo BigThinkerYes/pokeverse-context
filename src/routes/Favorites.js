@@ -25,24 +25,19 @@ function Favorites({ name }) {
     <Container>
       <Row className="mb-4">
         <Col sm="8" md="6" className="mx-auto">
-          <InputGroup>
-            <InputGroup.Text id="search">Search</InputGroup.Text>
-            <FormControl
-              value={search}
-              aria-label="search"
-              aria-describedby="search"
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </InputGroup>
+          {filteredPokemon.map((pokemon) => (
+            <Col key={pokemon.name}>
+              <PokemonCard name={favorite} />
+            </Col>
+          ))}
+          <Button
+            variant="primary"
+            className="btn btn-danger"
+            onClick={() => RemoveFavorite(name)}
+          >
+            Remove from Favorites
+          </Button>
         </Col>
-      </Row>
-
-      <Row className="g-4">
-        {filteredPokemon.map((pokemon) => (
-          <Col key={pokemon.name}>
-            <PokemonCard name={favorite} />
-          </Col>
-        ))}
       </Row>
     </Container>
   );

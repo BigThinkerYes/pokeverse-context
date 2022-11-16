@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 function PokemonDetails() {
   const params = useParams();
@@ -19,7 +19,11 @@ function PokemonDetails() {
 
   return (
     <div>
-      <img width="300" height="300" src={`https://img.pokemondb.net/artwork/large/${params.name}.jpg`} />
+      <img
+        width="300"
+        height="300"
+        src={`https://img.pokemondb.net/artwork/large/${params.name}.jpg`}
+      />
       <h1>{params.name}</h1>
       <p>height: {pokemon.height}</p>
       <p>weight: {pokemon.weight}</p>

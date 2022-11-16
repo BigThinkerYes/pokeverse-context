@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
 import { FavoritesProvider } from "./FavoritesProvider";
 import { Home, PokemonDetails, Favorites } from "./routes";
+import { Favorites } from "./routes/Favorites";
 
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
