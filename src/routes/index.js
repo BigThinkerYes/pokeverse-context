@@ -1,2 +1,2 @@
-export * from './Home';
-export * from './PokemonDetails';
+export * from "./Home";
+export * from "./PokemonDetails";

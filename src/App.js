@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigation } from "./components/Navigation";
+import { FavoritesProvider } from "./FavoritesProvider";
 import { Home, PokemonDetails, Favorites } from "./routes";
 
 function App() {
@@ -16,19 +17,21 @@ function App() {
         console.error(error);
       });
   }, []);
-
+  // wrap returned component BowserRouter with FavoritesProvider
   return (
-    <BrowserRouter>
-      <div data-testid="app">
-        <Navigation />
+    <FavoritesProvider>
+      <BrowserRouter>
+        <div data-testid="app">
+          <Navigation />
 
-        <Routes>
-          <Route path="/" element={<Home pokemonList={pokemonList} />} />
-          <Route path="/:name" element={<PokemonDetails />} />
-          <Route path="/:favorites" element={<Favorites />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home pokemonList={pokemonList} />} />
+            <Route path="/:name" element={<PokemonDetails />} />
+            <Route path="/:favorites" element={<Favorites />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </FavoritesProvider>
   );
 }
 
